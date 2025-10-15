@@ -8,7 +8,7 @@ Frontend will receive historic macronutrients data and will need to send daily m
 
 Frontend does not need to worry about backend - they need to create a HTML page that will make GET and POST requests to the backend.
 
-Making a GET request to /api/days/<n> will return a JSON object as follows:
+Making a GET request to /api/days/`n` will return a JSON object as follows, for the last `n` days.
 ```
 {
   day1: {
@@ -33,14 +33,19 @@ Making a GET request to /api/user_info will return a JSON object as follows:
 }
 ```
 
-Calculations: 
+You can add a day's data to the file by POSTing to /submit_info - the HTML form should handle this for you, but you will need to point it at /submit_info. The names of the four fields should be "carbohydrate", "protein", "fat" and "calories".
+
+#### Calculations:
+ 
 | Activity level     | Freq. (times/week) | 
 BMR (basic calories) 
 
-Male: 10 * weight + 6.25 * height - 5 * age + 5 
+Male: 12 * weight + 6.25 * height - 5 * age + 5 
 
-Female: 10 * weight + 6.25 * height - 5 * age -161
+Female: 12 * weight + 6.25 * height - 5 * age -161
 
+
+#### Coming in a future update: 
 | Activity level       | Freq. (times/week) | Macro multiplier |
 |:-----------|:---:|------:|
 | Sedentary / Very Light      |  0-1x |    1.2 |

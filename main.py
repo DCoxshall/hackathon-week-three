@@ -28,3 +28,31 @@ def get_days(num_days: int):
         user_data[day_name] = day_data
      
     return jsonify(user_data)
+
+@app.route("/api/user_info", methods=['GET'])
+def get_user_info():
+    user_data_file = open("user_data.txt", "r")
+    lines = user_data_file.readlines()
+   
+    if len(lines) == 0:
+        return jsonify({"error": "No user created"})
+  
+    data_line = lines[0]
+    fields = data_line.strip().split(" ")
+     
+    user_data = {"username": fields[0], "height": fields[1], "weight": fields[2], "sex": fields[3]}
+
+    return jsonify(user_data)
+
+@app.route("/submit_info", methods=['POST'])
+def post_info(carbs: int, protein: int, fat: int, calories: int):
+    carbs = request.form["carbs"]
+    protein = request.form["protein"]
+    fat = request.form["fat"]
+    calories = request.form["calories"]
+   
+    user_file = open("user_data.txt", "a")
+    user_file.write(f"{carbs} {protein} {fat} {calories")
+    user_file.close()
+
+    return "Successfully added macros!"
