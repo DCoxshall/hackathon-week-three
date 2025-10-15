@@ -33,6 +33,8 @@ Making a GET request to /api/user_info will return a JSON object as follows:
 }
 ```
 
+You can add a day's data to the file by POSTing to /submit_info - the HTML form should handle this for you, but you will need to point it at /submit_info. The names of the four fields should be "carbohydrate", "protein", "fat" and "calories".
+
 Calculations: 
 | Activity level     | Freq. (times/week) | 
 BMR (basic calories) 
