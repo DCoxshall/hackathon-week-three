@@ -85,6 +85,7 @@
         <label for="carbohydratesIntake">Carbohydrates:</label><input id = "carbohydratesIntake" name = "carbohydratesIntake"  type="number"><br><br>
         <label for="fatsIntake">Fats:</label><input id = "fatsIntake" name = "fatsIntake"  type="number"><br><br>
         <label for="calorieIntake">Calories:</label><input id = "calorieIntake" name = "calorieIntake"  type="number"><br><br>
+        <input type = "submit" value = "SUBMIT">
       </form>
 
   </main>
@@ -94,7 +95,14 @@
   </footer>
 
   <script>
-    fetch("/api/days/")
+    let x = await fetch("/api/days/");
+    let data = await x.text();
+    let sum = new Array(4);
+    for (var i = 0; i < 4; i++){
+      sum[i] = 0;
+    }
+    //[protien, carbohydrates, fats, calories]
+    
   </script>
 </body>
 </html>
