@@ -80,11 +80,11 @@
         </tbody>
       </table>
 
-      <form method = "POST" action = "#">
-        <label for="protienIntake">Protien:</label><input id = "protienIntake" name = "protienIntake" type="number"><br><br>
-        <label for="carbohydratesIntake">Carbohydrates:</label><input id = "carbohydratesIntake" name = "carbohydratesIntake"  type="number"><br><br>
-        <label for="fatsIntake">Fats:</label><input id = "fatsIntake" name = "fatsIntake"  type="number"><br><br>
-        <label for="calorieIntake">Calories:</label><input id = "calorieIntake" name = "calorieIntake"  type="number"><br><br>
+      <form method = "POST" action = "/submit_info">
+        <label for="protein">Protien:</label><input name = "protein" type="number"><br><br>
+        <label for="carbohydrates">Carbohydrates:</label><input name = "carbohydrate"  type="number"><br><br>
+        <label for="fats">Fats:</label><input  name = "fat"  type="number"><br><br>
+        <label for="calorie">Calories:</label><input name = "calories"  type="number"><br><br>
         <input type = "submit" value = "SUBMIT">
       </form>
 
@@ -101,8 +101,28 @@
     for (var i = 0; i < 4; i++){
       sum[i] = 0;
     }
+    var x = 1;
+    while (data["day" + String(x)] && x < 7){
+      sum[0] = sum[0] + data["day" + String(x)]["protien"];
+      sum[1] = sum[1] + data["day" + String(x)]["carbohydrates"];
+      sum[2] = sum[2] + data["day" + String(x)]["fats"];
+      sum[3] = sum[3] + data["day" + String(x)]["calories"];
+    }
+    Document.getElementById("protienIntake").innerHTML = Math.round((sum[0] / sum[3])*1000) /100;
+    Document.getElementById("carbohydrateIntake").innerHTML = Math.round((sum[1] / sum[3])*1000) /100;
+    Document.getElementById("fatIntake").innerHTML = Math.round((sum[2] / sum[3])*1000) /100;
+    Document.getElementById("caloricIntake").innerHTML = sum[3];
+
+    letyx = await fetch("/api/days/");
+    let info = await y.text();
+    if (info["sex"] == "male"){
+      Document.getElementById("expectedCalories") = 12 * info["weight"] + 6.25 * info[height] - 120;
+    }
+    else{
+      Document.getElementById("expectedCalories") = 12 * info["weight"] + 6.25 * info[height] - 286;
+    }
     //[protien, carbohydrates, fats, calories]
-    
+
   </script>
 </body>
 </html>
