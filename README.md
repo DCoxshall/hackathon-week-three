@@ -19,3 +19,19 @@ Making a GET request to /api/days/<n> will return a JSON object as follows:
   [...]
 }
 "day1" is the most recent day (i.e. yesterday, assuming the user is inputting their nutrients every single day).
+
+Calculations: 
+| Activity level     | Freq. (times/week) | 
+BMR (basic calories) 
+
+Male: 10 * weight + 6.25 * height - 5 * age + 5 
+Female: 10 * weight + 6.25 * height - 5 * age -161
+
+| Activity level       | Freq. (times/week) | Macro multiplier |
+|:-----------|:---:|------:|
+| Sedentary / Very Light      |  0-1x |    1.2 |
+| Low        |  1-2x |    1.375 |
+| Moderate    |  3-4x |    1.55 |
+| High   |  5-6x |    1.725 |
+| Very High    |  7x |    1.9  |
+
