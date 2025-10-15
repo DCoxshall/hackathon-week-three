@@ -43,3 +43,16 @@ def get_user_info():
     user_data = {"username": fields[0], "height": fields[1], "weight": fields[2], "sex": fields[3]}
 
     return jsonify(user_data)
+
+@app.route("/submit_info", methods=['POST'])
+def post_info(carbs: int, protein: int, fat: int, calories: int):
+    carbs = request.form["carbs"]
+    protein = request.form["protein"]
+    fat = request.form["fat"]
+    calories = request.form["calories"]
+   
+    user_file = open("user_data.txt", "a")
+    user_file.write(f"{carbs} {protein} {fat} {calories")
+    user_file.close()
+
+    return "Successfully added macros!"
