@@ -59,25 +59,21 @@
         <tbody>
           <tr>
             <td>Protien</td>
-            <td></td>
             <td id = "protienIntake"></td>
             <td>45% - 65%</td>
           </tr>
           <tr>
             <td>Carbohydrates</td>
-            <td></td>
             <td id = "carbohydrateIntake"></td>
             <td>20% - 35%</td>
           </tr>
           <tr>
             <td>Fats</td>
-            <td></td>
             <td id = "fatIntake"></td>
             <td>10% - 35%</td>
           </tr>
           <tr>
             <td>Calories</td>
-            <td>Testing</td>
             <td id = "caloricIntake"></td>
             <td id = "expectedCalories"></td>
           </tr>
@@ -98,8 +94,7 @@
   </footer>
 
   <script>
-    // Small script to set the current year dynamically
-    document.getElementById('year').textContent = new Date().getFullYear();
+    fetch("/api/days/")
   </script>
 </body>
 </html>
