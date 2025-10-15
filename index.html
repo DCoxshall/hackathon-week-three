@@ -95,8 +95,8 @@
   </footer>
 
   <script>
-    let x = await fetch("/api/days/2");
-    let data = await x.text();
+    let x = fetch("/api/days/2");
+    let data = x.text();
     //[protien, carbohydrates, fats, calories]
     let sum = new Array(4);
     for (var i = 0; i < 4; i++){
@@ -114,8 +114,8 @@
     Document.getElementById("fatIntake").innerHTML = Math.round((sum[2] / sum[3])*1000) /100;
     Document.getElementById("caloricIntake").innerHTML = sum[3];
 
-    let y = await fetch("/api/days/");
-    let info = await y.text();
+    let y = fetch("/api/days/");
+    let info = y.text();
     if (info["sex"] == "male"){
       Document.getElementById("expectedCalories") = 12 * info["weight"] + 6.25 * info[height] - 120;
     }
