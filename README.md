@@ -9,6 +9,7 @@ Frontend will receive historic macronutrients data and will need to send daily m
 Frontend does not need to worry about backend - they need to create a HTML page that will make GET and POST requests to the backend.
 
 Making a GET request to /api/days/<n> will return a JSON object as follows:
+```
 {
   day1: {
     "carbohydrate": 50,
@@ -18,7 +19,19 @@ Making a GET request to /api/days/<n> will return a JSON object as follows:
   },
   [...]
 }
+```
+
 "day1" is the most recent day (i.e. yesterday, assuming the user is inputting their nutrients every single day).
+
+Making a GET request to /api/user_info will return a JSON object as follows:
+```
+{
+  "username": "dcoxshall", (for example)
+  "height": 175, (cm)
+  "weight": 75, (kg)
+  "sex": "male" ("male" or "female" - we are referring to biological sex, not gender)
+}
+```
 
 Calculations: 
 | Activity level     | Freq. (times/week) | 
