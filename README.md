@@ -8,7 +8,7 @@ Frontend will receive historic macronutrients data and will need to send daily m
 
 Frontend does not need to worry about backend - they need to create a HTML page that will make GET and POST requests to the backend.
 
-Making a GET request to /api/days/<n> will return a JSON object as follows:
+Making a GET request to /api/days/`n` will return a JSON object as follows, for the last `n` days.
 ```
 {
   day1: {
