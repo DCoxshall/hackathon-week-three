@@ -40,80 +40,51 @@
 </head>
 <body>
   <header>
-    <h1>Welcome to My Simple Webpage</h1>
-    <p class="intro">This page demonstrates a short block of text, a table, and an image with caption.</p>
+    <h1>Welcome to the Tracker</h1>
+    <p class="intro">Here is where we will take in your macronutrients and show you how you are doing</p>
   </header>
 
-  <main>
-    <section>
-      <h2>About this page</h2>
-      <p>
-        This page is intentionally minimal so you can see how text, tabular data and images work together.
-        Feel free to replace the content, update the table rows, or swap the image file with your own.
-      </p>
-    </section>
-
-    <section aria-labelledby="sample-table">
-      <h2 id="sample-table">Sample Table</h2>
+      <h2 id="sample-table">Macronutrients Table</h2>
       <table>
         <caption style="caption-side: top; text-align: left; font-weight: 600; margin-bottom: 0.5rem;">
           Weekly tasks and status
         </caption>
         <thead>
           <tr>
-            <th>Day</th>
-            <th>Task</th>
-            <th>Status</th>
-            <th>Hours</th>
+            <th>Food Type</th>
+            <th></th>
+            <th>Percentage of Total Intake</th>
+            <th>Target Intake</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Monday</td>
-            <td>Plan sprint</td>
-            <td>Done</td>
-            <td>2</td>
+            <td>Protien</td>
+            <td></td>
+            <td id = "protienIntake"></td>
+            <td>45% - 65%</td>
           </tr>
           <tr>
-            <td>Tuesday</td>
-            <td>Design review</td>
-            <td>In progress</td>
-            <td>3</td>
+            <td>Carbohydrates</td>
+            <td></td>
+            <td id = "carbohydrateIntake"></td>
+            <td>20% - 35%</td>
           </tr>
           <tr>
-            <td>Wednesday</td>
-            <td>Build feature</td>
-            <td>Planned</td>
-            <td>5</td>
+            <td>Fats</td>
+            <td></td>
+            <td id = "fatIntake"></td>
+            <td>10% - 35%</td>
           </tr>
           <tr>
-            <td>Thursday</td>
+            <td>Calories</td>
             <td>Testing</td>
-            <td>Planned</td>
-            <td>4</td>
-          </tr>
-          <tr>
-            <td>Friday</td>
-            <td>Deploy & retro</td>
-            <td>Planned</td>
-            <td>2</td>
+            <td id = "caloricIntake"></td>
+            <td id = "expectedCalories"></td>
           </tr>
         </tbody>
       </table>
-    </section>
 
-    <section>
-      <h2>Picture</h2>
-      <figure>
-        <!-- The src below points to a local image path. If that file doesn't exist, the onerror fallback will load a placeholder image. -->
-        <img
-          src="images/photo.jpg"
-          alt="A descriptive caption of the picture"
-          onerror="this.onerror=null; this.src='https://via.placeholder.com/800x420?text=Sample+Image';"
-        />
-        <figcaption>Figure: Sample image — replace <code>images/photo.jpg</code> with your own picture.</figcaption>
-      </figure>
-    </section>
   </main>
 
   <footer style="margin-top: 2rem; text-align:center; color:#666; font-size:0.9rem;">
