@@ -102,13 +102,12 @@
     for (var i = 0; i < 4; i++){
       sum[i] = 0;
     }
-    let i = 1;
-    while (data["day" + String(x)] && x2 < 7){
-      sum[0] = sum[0] + data["day" + String(i)]["protein"];
+    var i = 1;
+    while (data["day" + String(i)] && i < 7){
+      sum[0] = sum[0] + data["day" + String(i)]["protien"];
       sum[1] = sum[1] + data["day" + String(i)]["carbohydrates"];
       sum[2] = sum[2] + data["day" + String(i)]["fats"];
       sum[3] = sum[3] + data["day" + String(i)]["calories"];
-      i++;
     }
     Document.getElementById("protienIntake").innerHTML = Math.round((sum[0] / sum[3])*1000) /100;
     Document.getElementById("carbohydrateIntake").innerHTML = Math.round((sum[1] / sum[3])*1000) /100;
