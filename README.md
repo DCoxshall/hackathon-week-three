@@ -44,6 +44,8 @@ Male: 12 * weight + 6.25 * height - 5 * age + 5
 
 Female: 12 * weight + 6.25 * height - 5 * age -161
 
+
+#### Coming in a future update: 
 | Activity level       | Freq. (times/week) | Macro multiplier |
 |:-----------|:---:|------:|
 | Sedentary / Very Light      |  0-1x |    1.2 |
