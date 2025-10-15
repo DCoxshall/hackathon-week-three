@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Basic Webpage — Text, Table & Picture</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+      line-height: 1.6;
+      color: #222;
+    }
+    header { text-align: center; margin-bottom: 2rem; }
+    h1 { margin: 0; font-size: 2rem; }
+    .intro { margin-bottom: 1.5rem; }
+    figure { margin: 1.5rem 0; text-align: center; }
+    img { max-width: 100%; height: auto; border-radius: 6px; box-shadow: 0 4px 10px rgba(0,0,0,0.06); }
+    figcaption { font-size: 0.9rem; color: #555; margin-top: 0.5rem; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    th, td {
+      padding: 0.6rem 0.75rem;
+      border: 1px solid #e0e0e0;
+      text-align: left;
+    }
+    th { background: #f7f7f7; }
+    @media (prefers-color-scheme: dark) {
+      body { color: #ddd; background: #111; }
+      th, td { border-color: #333; }
+      th { background: #222; }
+      figcaption { color: #aaa; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to My Simple Webpage</h1>
+    <p class="intro">This page demonstrates a short block of text, a table, and an image with caption.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>About this page</h2>
+      <p>
+        This page is intentionally minimal so you can see how text, tabular data and images work together.
+        Feel free to replace the content, update the table rows, or swap the image file with your own.
+      </p>
+    </section>
+
+    <section aria-labelledby="sample-table">
+      <h2 id="sample-table">Sample Table</h2>
+      <table>
+        <caption style="caption-side: top; text-align: left; font-weight: 600; margin-bottom: 0.5rem;">
+          Weekly tasks and status
+        </caption>
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Task</th>
+            <th>Status</th>
+            <th>Hours</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Monday</td>
+            <td>Plan sprint</td>
+            <td>Done</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>Tuesday</td>
+            <td>Design review</td>
+            <td>In progress</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>Wednesday</td>
+            <td>Build feature</td>
+            <td>Planned</td>
+            <td>5</td>
+          </tr>
+          <tr>
+            <td>Thursday</td>
+            <td>Testing</td>
+            <td>Planned</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>Friday</td>
+            <td>Deploy & retro</td>
+            <td>Planned</td>
+            <td>2</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Picture</h2>
+      <figure>
+        <!-- The src below points to a local image path. If that file doesn't exist, the onerror fallback will load a placeholder image. -->
+        <img
+          src="images/photo.jpg"
+          alt="A descriptive caption of the picture"
+          onerror="this.onerror=null; this.src='https://via.placeholder.com/800x420?text=Sample+Image';"
+        />
+        <figcaption>Figure: Sample image — replace <code>images/photo.jpg</code> with your own picture.</figcaption>
+      </figure>
+    </section>
+  </main>
+
+  <footer style="margin-top: 2rem; text-align:center; color:#666; font-size:0.9rem;">
+    © <span id="year"></span> My Simple Page
+  </footer>
+
+  <script>
+    // Small script to set the current year dynamically
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
