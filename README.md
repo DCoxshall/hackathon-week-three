@@ -40,9 +40,9 @@ You can add a day's data to the file by POSTing to /submit_info - the HTML form 
 | Activity level     | Freq. (times/week) | 
 BMR (basic calories) 
 
-Male: 10 * weight + 6.25 * height - 5 * age + 5 
+Male: 12 * weight + 6.25 * height - 5 * age + 5 
 
-Female: 10 * weight + 6.25 * height - 5 * age -161
+Female: 12 * weight + 6.25 * height - 5 * age -161
 
 | Activity level       | Freq. (times/week) | Macro multiplier |
 |:-----------|:---:|------:|
