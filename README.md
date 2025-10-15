@@ -25,6 +25,7 @@ Calculations:
 BMR (basic calories) 
 
 Male: 10 * weight + 6.25 * height - 5 * age + 5 
+
 Female: 10 * weight + 6.25 * height - 5 * age -161
 
 | Activity level       | Freq. (times/week) | Macro multiplier |
