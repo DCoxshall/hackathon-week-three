@@ -52,7 +52,7 @@ def post_info(carbs: int, protein: int, fat: int, calories: int):
     calories = request.form["calories"]
    
     user_file = open("user_data.txt", "a")
-    user_file.write(f"{carbs} {protein} {fat} {calories")
+    user_file.write(f"{carbs} {protein} {fat} {calories}")
     user_file.close()
 
     return "Successfully added macros!"
